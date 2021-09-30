@@ -5,7 +5,7 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     private float minspeed = 12;
-    private float maxSpeed = 16;
+    private float maxSpeed = 18;
     private float maxTorque = 10;
     private float xRange = 4;
     private float ySpawnPos = -6;

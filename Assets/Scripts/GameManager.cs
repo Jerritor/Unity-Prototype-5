@@ -19,22 +19,36 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> targets;
 
+    public GameObject titleScreen;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        isGameActive = true;
-
-        StartCoroutine(SpawnTarget());
-
-        score = 0;
-        UpdateScore(0);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void StartGame(int difficulty)
+    {
+        //hide title screen
+        titleScreen.gameObject.SetActive(false);
+
+        //set spawnrate based on difficulty
+        spawnRate /= difficulty;
+
+        //start game
+        isGameActive = true;
+
+        StartCoroutine(SpawnTarget());
+
+        score = 0;
+        UpdateScore(0);
     }
 
     public void UpdateScore(int scoreToAdd)
